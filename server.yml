@@ -1,1 +1,4 @@
 application_title: Ontrack
+
+server:
+  applicationContextPath: /Ontrack
