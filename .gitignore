@@ -1,0 +1,14 @@
+### Java ###
+*.class
+
+### IntelliJ ###
+.idea
+.settings
+out/
+build/
+
+### Gradle ###
+.gradle/
+
+### OSX ###
+.DS_Store
