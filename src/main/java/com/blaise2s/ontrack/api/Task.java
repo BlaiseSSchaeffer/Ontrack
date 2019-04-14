@@ -12,25 +12,35 @@ import javax.validation.constraints.NotNull;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+        "id",
         "title",
-        "description"
+        "comments"
 })
 public class Task {
 
     @JsonCreator
-    public Task(@JsonProperty("title") String title,
-                @JsonProperty("description") String description) {
+    public Task(@JsonProperty("id") Integer id,
+                @JsonProperty("title") String title,
+                @JsonProperty("comments") String comments) {
+        this.id = id;
         this.title = title;
-        this.description = description;
+        this.comments = comments;
     }
+
+    public Task(String title,
+                String description) {
+        this.title = title;
+        this.comments = description;
+    }
+
+    @JsonProperty("id")
+    private Integer id;
 
     @NotNull
     @NonNull
     @JsonProperty("title")
     private String title;
 
-    @NotNull
-    @NonNull
-    @JsonProperty("description")
-    private String description;
+    @JsonProperty("comments")
+    private String comments;
 }
